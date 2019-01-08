@@ -3243,3 +3243,51 @@ ul.menu-principal-mobile320{
 .menu-principal-mobile320 .menu-paginas li{
     padding-bottom: 20px;
 }
+
+#main-banners #carousel{
+    height: 88vh;
+}
+
+#main-banners #carousel .carousel-inner, #main-banners #carousel .item{
+    height: 100%;
+}
+
+#main-banners #carousel .item img{
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.jumbotron.home{
+    position: absolute;
+    top: 0;
+    color: white;
+    text-align: center;
+    background-color: transparent;
+}
+
+p.lead a{
+    background: linear-gradient(to right, #123491, #376abb);
+    border: 0;
+    padding: 15px 30px;
+}
+
+#area-nossos-requisitos{
+    padding: 0 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#area-nossos-requisitos .nossos-requisitos-titulo{
+    margin-top: 35px;
+}
+
+#area-nossos-requisitos .requisito{
+    margin-top: 40px;
+}
+
+#area-nossos-requisitos .requisito h3{
+    margin: 15px 0 25px 0;
+}

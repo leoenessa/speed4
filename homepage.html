@@ -1,24 +1,12 @@
 {% extends _layout %}
 
 {% block banner %}
-	<section id="main-banners">
+	
+<section id="main-banners">
 		{% if template_settings('image:banner_tarja_sup') %}
-		<div class="container{{ template_settings('if:force_content') and template_settings('if:force_banner') ? '-fluid' : '' }}">
-    		<div class="row">
-		        <div class="col-xs-12">
-		            <div class="bannerTarja">
-		                {% if template_settings('text:banner_tarja_sup') != null %}<a href="{{ template_settings('text:banner_tarja_sup') }}" {% if 'http' in template_settings('text:banner_tarja_sup') %}target="_blank"{% endif %}>{% endif %}
-		                    <img src="{{ host_url('uploads/images/full/' ~ template_settings('image:banner_tarja_sup')) }}" />
-		                {% if template_settings('text:banner_tarja_sup') != null %}</a>{% endif %}
-		            </div>
-		        </div>
-    		</div>
-		</div>
-        {% endif %}
-        <div class="container{{ template_settings('if:force_banner') ? '-fluid' : '' }}">
-			<div class="row">
-				<div class="col-xs-12">
-					<div id="carousel" class="carousel slide" data-ride="carousel">
+		<div class="container-banners">
+        
+        <div id="carousel" class="carousel slide" data-ride="carousel">
 						<div class="carousel-inner">
 							{% for banner in banners %}
 								<div class="item{{ loop.first ? ' active' : '' }}">
@@ -32,93 +20,37 @@
 								<li data-target="#carousel" data-slide-to="{{ loop.index - 1 }}" class="{{ loop.first ? 'active' : 'passive' }}"></li>
 							  {% endfor %}
 							</ol>
-							{% if template_settings('if:arrowshow')%}
+						
 							<a class="left carousel-control" href="#carousel" data-slide="prev">
-								<span class="arrowleft"></span>
+<!--                    <img class="seta-esquerda" src="{{ theme_url('assets/img/leftarrow.png') }}">-->
+                  <i class="material-icons">arrow_back_ios</i>
 							</a>
 							<a class="right carousel-control" href="#carousel" data-slide="next">
-								<span class="arrowright"></span>
+<!--                    <img class="seta-direita" src="{{ theme_url('assets/img/rightarrow.png') }}">-->
+                  <i class="material-icons">arrow_forward_ios</i>
 							</a>
-							{% endif %}
+            
+            <div class="jumbotron home">
+                  <h1 class="display-4">Transporte seu produto com a Speed 4.</h1>
+                  <p class="lead">Empresa segmentada em logística e transporte, que atende a seus colaboradores e clientes com todo acompanhamento e eficiência</p>
+                  <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Saiba mais</a>
+                  </p>
+            </div>
+							
 						{% endif %}
 					</div>
-				</div>
-			</div>
-		</div>
-		<script type="text/javascript">
-			$(window).load(function(){
-				$('.carousel-control').css('opacity','1');
-				var ch = ($('.carousel-inner').height()-60)/2;
-				$('.carousel-control.left').css("top",ch);
-				$('.carousel-control.right').css("top",ch);
-			});
-		</script>
-		{% if template_settings('image:banner_tarja_inf') %}
-		<div class="container{{ template_settings('if:force_content') and template_settings('if:force_banner') ? '-fluid' : '' }}">
-    		<div class="row">
-		        <div class="col-xs-12">
-		            <div class="bannerTarjaInf">
-		                {% if template_settings('text:banner_tarja_inf') != null %}<a href="{{ template_settings('text:banner_tarja_inf') }}" {% if 'http' in template_settings('text:banner_tarja_inf') %}target="_blank"{% endif %}>{% endif %}
-		                    <img src="{{ host_url('uploads/images/full/' ~ template_settings('image:banner_tarja_inf')) }}" />
-		                {% if template_settings('text:banner_tarja_inf') != null %}</a>{% endif %}
+<!--
+		            <div class="bannerTarja">
+		                {% if template_settings('text:banner_tarja_sup') != null %}<a href="{{ template_settings('text:banner_tarja_sup') }}" {% if 'http' in template_settings('text:banner_tarja_sup') %}target="_blank"{% endif %}>{% endif %}
+		                    <img src="{{ host_url('uploads/images/full/' ~ template_settings('image:banner_tarja_sup')) }}" />
+		                {% if template_settings('text:banner_tarja_sup') != null %}</a>{% endif %}
 		            </div>
-		        </div>
-    		</div>
-		</div>
-        {% endif %}
-		{% if template_settings('select:banner_extra') != "Não" %}
-		<div class="container{{ template_settings('if:force_content') and template_settings('if:force_banner') ? '-fluid' : '' }}">
-    		<div class="row">
-    		    {% if template_settings('select:banner_extra') == "1" %}
-    		        <div class="col-xs-12">
-    		            <div class="bannerExtra">
-    		                {% if template_settings('text:banner_one') != null %}<a href="{{ template_settings('text:banner_one') }}" {% if 'http' in template_settings('text:banner_one') %}target="_blank"{% endif %}>{% endif %}
-    		                    <img src="{{ host_url('uploads/images/full/' ~ template_settings('image:banner_one')) }}" />
-    		                {% if template_settings('text:banner_one') != null %}</a>{% endif %}
-    		            </div>
-    		        </div>
-                {% elseif template_settings('select:banner_extra') == "2" %}
-                    <div class="col-xs-6">
-                        <div class="bannerExtra">
-    		                {% if template_settings('text:banner_one') != null %}<a href="{{ template_settings('text:banner_one') }}" {% if 'http' in template_settings('text:banner_one') %}target="_blank"{% endif %}>{% endif %}
-    		                    <img src="{{ host_url('uploads/images/full/' ~ template_settings('image:banner_one')) }}" />
-    		                {% if template_settings('text:banner_one') != null %}</a>{% endif %}
-    		            </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <div class="bannerExtra">
-    		                {% if template_settings('text:banner_two') != null %}<a href="{{ template_settings('text:banner_two') }}" {% if 'http' in template_settings('text:banner_two') %}target="_blank"{% endif %}>{% endif %}
-    		                    <img src="{{ host_url('uploads/images/full/' ~ template_settings('image:banner_two')) }}" />
-    		                {% if template_settings('text:banner_two') != null %}</a>{% endif %}
-    		            </div>
-                    </div>
-                {% elseif template_settings('select:banner_extra') == "3" %}
-                    <div class="col-xs-4">
-                        <div class="bannerExtra">
-    		                {% if template_settings('text:banner_one') != null %}<a href="{{ template_settings('text:banner_one') }}" {% if 'http' in template_settings('text:banner_one') %}target="_blank"{% endif %}>{% endif %}
-    		                    <img src="{{ host_url('uploads/images/full/' ~ template_settings('image:banner_one')) }}" />
-    		                {% if template_settings('text:banner_one') != null %}</a>{% endif %}
-    		            </div>
-                    </div>
-                    <div class="col-xs-4">
-                        <div class="bannerExtra">
-    		                {% if template_settings('text:banner_two') != null %}<a href="{{ template_settings('text:banner_two') }}" {% if 'http' in template_settings('text:banner_two') %}target="_blank"{% endif %}>{% endif %}
-    		                    <img src="{{ host_url('uploads/images/full/' ~ template_settings('image:banner_two')) }}" />
-    		                {% if template_settings('text:banner_two') != null %}</a>{% endif %}
-    		            </div>
-                    </div>
-                    <div class="col-xs-4">
-                        <div class="bannerExtra">
-    		                {% if template_settings('text:banner_three') != null %}<a href="{{ template_settings('text:banner_three') }}" {% if 'http' in template_settings('text:banner_three') %}target="_blank"{% endif %}>{% endif %}
-    		                    <img src="{{ host_url('uploads/images/full/' ~ template_settings('image:banner_three')) }}" />
-    		                {% if template_settings('text:banner_three') != null %}</a>{% endif %}
-    		            </div>
-                    </div>
-    		    {% endif %}
-    		</div>
-		</div>
-		{% endif %}
-	</section>
+-->
+    </div>
+    {% endif %}
+</section>
+	
 {% endblock %}
 
 {% block blog %}
