@@ -3291,3 +3291,84 @@ p.lead a{
 #area-nossos-requisitos .requisito h3{
     margin: 15px 0 25px 0;
 }
+
+#nossa-missao{
+    background: url('../img/Missao.png');
+    background-position: center;
+    margin-top: 30px;
+}
+
+#nossa-missao .missao{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    color: white;
+}
+
+#nossa-missao .missao h3{
+    font-size: 40px;
+}
+#nossa-missao .missao p{
+    font-size: 18px;
+    text-align: center;
+}
+
+#nossos-valores .container-valores{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 30px;
+}
+
+#nossos-valores .container-valores .valor{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#nossos-valores .container-valores .valor img{
+    width: 60px;
+    height: 60px;
+    object-fit: none;
+}
+
+#nossos-valores .container-valores .valor h3{
+    margin: 0;
+    margin-left: 15px;
+}
+
+#nossos-valores .container-valores .nossos-valores-titulo{
+    text-align: center;
+    font-size: 16px;
+}
+
+#nossos-valores .container-valores .nossos-valores-titulo h3{
+    font-size: 40px;
+}
+
+#politica-qualidade{
+    background: url('../img/Política_de_qualidade.png');
+    background-position: center;
+    margin-top: 30px;
+}
+
+#politica-qualidade .politica-qualidade{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+#politica-qualidade .politica-qualidade h3{
+    font-size: 40px;
+}
+
